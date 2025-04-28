@@ -35,8 +35,10 @@ jobs:
         run: curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain leanprover/lean4:4.0.0
 
       - name: Update
-        run: ~/.elan/bin/lake MATHLIB_NO_CACHE_ON_UPDATE=1 lake update doc-gen4
+        run: ~/.elan/bin/lake lake update doc-gen4
         working-directory: docbuild
+        env:
+          MATHLIB_NO_CACHE_ON_UPDATE: 1
 
       - name: Cache mathlib docs
         uses: actions/cache@v3
