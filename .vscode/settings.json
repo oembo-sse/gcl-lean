@@ -1,0 +1,9 @@
+{
+    "editor.rulers": [
+        100
+    ],
+    "lean4.input.customTranslations": {
+        "init": "▹",
+        "term": "◂"
+    }
+}
